@@ -1,0 +1,226 @@
+/* Body and overall setup */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Container for the main content */
+.container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* Main title (Happy Birthday) animation */
+#main-title {
+    font-size: 3em;
+    color: #ffaf69;
+    animation: bounce 2s infinite;
+}
+
+/* Subtitle animation */
+.sub-title {
+    font-size: 1.5em;
+    color: #ff1493;
+    margin-bottom: 20px;
+    animation: fadeIn 4s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Friends gallery (images) */
+.friends-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Image animations */
+.friends-gallery img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: spin 3s linear infinite;
+}
+
+.friends-gallery img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom message */
+.bottom-message {
+    font-size: 1.3em;
+    color: #ff4500;
+    margin-top: 30px;
+    animation: fadeInUp 3s ease forwards;
+    opacity: 0;
+}
+
+/* Keyframes for text and image animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fireworks animation */
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff4500, 0 0 40px #ff4500, 0 0 60px #ffa500;
+    animation: explode 2s ease-out infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Additional firework variants */
+.firework:nth-child(1) {
+    left: 30%;
+    top: 30%;
+    animation-delay: 0s;
+    box-shadow: 0 0 20px #ff4500, 0 0 40px #ffa500, 0 0 60px #ff4500;
+}
+
+.firework:nth-child(2) {
+    left: 60%;
+    top: 50%;
+    animation-delay: 0.5s;
+    box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 60px #008000;
+}
+
+.firework:nth-child(3) {
+    left: 80%;
+    top: 20%;
+    animation-delay: 1s;
+    box-shadow: 0 0 20px #0000ff, 0 0 40px #0000ff, 0 0 60px #1e90ff;
+}
+
+.firework:nth-child(4) {
+    left: 50%;
+    top: 80%;
+    animation-delay: 1.5s;
+    box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff69b4, 0 0 60px #ff1493;
+}
+
+.firework:nth-child(5) {
+    left: 20%;
+    top: 40%;
+    animation-delay: 0.8s;
+    box-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 60px #ffd700;
+}
+
+/* Sparkles animation */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Randomly place sparkles */
+.sparkle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-delay: 0.5s;
+}
+
+.sparkle:nth-child(3) {
+    top: 60%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.sparkle:nth-child(4) {
+    top: 80%;
+    left: 40%;
+    animation-delay: 1.5s;
+}
+
+.sparkle:nth-child(5) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 2s;
+}
